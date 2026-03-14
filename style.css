@@ -1,16 +1,19 @@
+/* ============================================================
+   GLOBAL RESET & CSS VARIABLES
+   ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream: #faf8f4;
-  --warm-white: #fff9f2;
-  --ink: #1c1a17;
-  --muted: #7a7066;
-  --accent: #b5855a;
+  --cream:        #faf8f4;
+  --warm-white:   #fff9f2;
+  --ink:          #1c1a17;
+  --muted:        #7a7066;
+  --accent:       #b5855a;
   --accent-light: #e8d5c0;
-  --accent-pale: #f5ede3;
-  --line: #e8e0d5;
+  --accent-pale:  #f5ede3;
+  --line:         #e8e0d5;
   --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'DM Sans', sans-serif;
+  --sans:  'DM Sans', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -25,7 +28,10 @@ body {
   cursor: none;
 }
 
-/* ─── CUSTOM CURSOR ─── */
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
 .cursor {
   position: fixed;
   width: 12px; height: 12px;
@@ -48,10 +54,13 @@ body {
   transition: left 0.12s ease, top 0.12s ease, width 0.3s, height 0.3s, opacity 0.3s;
   opacity: 0.5;
 }
-.cursor.hover { width: 20px; height: 20px; }
+.cursor.hover         { width: 20px; height: 20px; }
 .cursor-follower.hover { width: 56px; height: 56px; opacity: 0.2; }
 
-/* ─── PAGE LOADER ─── */
+
+/* ============================================================
+   PAGE LOADER
+   ============================================================ */
 #loader {
   position: fixed; inset: 0;
   background: var(--ink);
@@ -61,6 +70,7 @@ body {
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 #loader.hidden { opacity: 0; visibility: hidden; }
+
 .loader-name {
   font-family: var(--serif);
   font-size: 2.2rem;
@@ -74,23 +84,25 @@ body {
   transform: translateY(30px);
   animation: loaderChar 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
 }
+
 .loader-bar-wrap {
   width: 180px; height: 1px;
-  background: rgba(255,255,255,0.15); overflow: hidden;
+  background: rgba(255,255,255,0.15);
+  overflow: hidden;
 }
 .loader-bar {
   height: 100%; width: 0;
   background: var(--accent);
   animation: loaderBar 1.6s cubic-bezier(0.16,1,0.3,1) forwards;
 }
-@keyframes loaderChar {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes loaderBar {
-  to { width: 100%; }
-}
 
-/* ─── NAV ─── */
+@keyframes loaderChar { to { opacity: 1; transform: translateY(0); } }
+@keyframes loaderBar  { to { width: 100%; } }
+
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
@@ -106,11 +118,15 @@ nav.scrolled {
   backdrop-filter: blur(12px);
   border-color: var(--line);
 }
+
+/* Logo nav */
 .nav-logo {
   font-family: var(--serif);
   font-size: 1.1rem; font-weight: 600;
-  letter-spacing: 0.02em; color: var(--ink);
-  text-decoration: none; position: relative;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
 }
 .nav-logo::after {
   content: '';
@@ -120,11 +136,16 @@ nav.scrolled {
   transition: transform 0.3s;
 }
 .nav-logo:hover::after { transform: scaleX(1); }
+
+/* Link-link nav */
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
-  text-decoration: none; font-size: 0.8rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); position: relative; padding-bottom: 2px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative; padding-bottom: 2px;
   transition: color 0.2s;
 }
 .nav-links a::after {
@@ -137,13 +158,20 @@ nav.scrolled {
 .nav-links a:hover { color: var(--accent); }
 .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
-/* ─── HERO ─── */
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
 #hero {
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; padding: 7rem 5vw 5rem;
-  gap: 4rem; position: relative; overflow: hidden;
+  align-items: center;
+  padding: 7rem 5vw 5rem;
+  gap: 4rem;
+  position: relative; overflow: hidden;
 }
+
+/* Dekorasi lingkaran blur di background */
 #hero::before {
   content: '';
   position: absolute; top: -20%; right: -10%;
@@ -165,40 +193,46 @@ nav.scrolled {
   50%       { transform: translateY(-30px) scale(1.05); }
 }
 
+/* Teks hero kiri */
 .hero-text { max-width: 540px; position: relative; z-index: 1; }
+
 .hero-tag {
-  display: inline-block; font-size: 0.72rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 1.5rem;
-  padding: 0.35rem 1rem; border: 1px solid var(--accent-light);
+  display: inline-block;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--accent-light);
   border-radius: 2rem;
   animation: tagPop 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
 }
 @keyframes tagPop {
-  from { opacity:0; transform: scale(0.8) translateY(10px); }
-  to   { opacity:1; transform: scale(1) translateY(0); }
+  from { opacity: 0; transform: scale(0.8) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
+
+/* Nama besar di hero */
 .hero-name {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 300; line-height: 1.1;
-  margin-bottom: 1.5rem; color: var(--ink);
+  margin-bottom: 1.5rem;
+  color: var(--ink);
 }
-.hero-name .line {
-  display: block; overflow: hidden;
-}
+.hero-name .line       { display: block; overflow: hidden; }
 .hero-name .line-inner {
   display: block;
   animation: lineReveal 0.8s cubic-bezier(0.16,1,0.3,1) both;
 }
 .hero-name .line:nth-child(1) .line-inner { animation-delay: 0.5s; }
 .hero-name .line:nth-child(2) .line-inner { animation-delay: 0.65s; }
-.hero-name .line:nth-child(3) .line-inner { animation-delay: 0.8s; }
+.hero-name em { font-style: italic; color: var(--accent); }
+
 @keyframes lineReveal {
   from { transform: translateY(100%) skewY(3deg); }
   to   { transform: translateY(0) skewY(0); }
 }
-.hero-name em { font-style: italic; color: var(--accent); }
+
 .hero-desc {
   font-size: 0.95rem; color: var(--muted);
   line-height: 1.8; margin-bottom: 2.5rem; max-width: 460px;
@@ -209,13 +243,16 @@ nav.scrolled {
   animation: fadeUp 0.7s 1.15s ease both;
 }
 
+/* Tombol umum */
 .btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.75rem 1.75rem; font-family: var(--sans);
-  font-size: 0.8rem; letter-spacing: 0.08em;
-  text-transform: uppercase; text-decoration: none;
-  border-radius: 2rem; transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  cursor: none; border: none; position: relative; overflow: hidden;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--sans); font-size: 0.8rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border-radius: 2rem; border: none;
+  position: relative; overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  cursor: none;
 }
 .btn::before {
   content: '';
@@ -225,6 +262,7 @@ nav.scrolled {
   transition: transform 0.3s ease;
 }
 .btn:hover::before { transform: translateX(0); }
+
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
@@ -240,26 +278,30 @@ nav.scrolled {
   transform: translateY(-3px);
 }
 
-/* hero visual */
+/* Card profil di hero kanan */
 .hero-visual {
   display: flex; justify-content: center; align-items: center;
   position: relative; z-index: 1;
   animation: cardEntrance 1s 0.6s cubic-bezier(0.16,1,0.3,1) both;
 }
 @keyframes cardEntrance {
-  from { opacity:0; transform: translateY(50px) rotate(-3deg); }
-  to   { opacity:1; transform: translateY(0) rotate(0); }
+  from { opacity: 0; transform: translateY(50px) rotate(-3deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0); }
 }
+
 .hero-card {
-  background: var(--warm-white); border: 1px solid var(--line);
-  border-radius: 2.5rem; padding: 3rem 2.5rem 2.5rem;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-radius: 2.5rem;
+  padding: 3rem 2.5rem 2.5rem;
   max-width: 420px; width: 100%;
   box-shadow: 0 24px 80px rgba(181,133,90,0.1), 0 2px 8px rgba(181,133,90,0.06);
   position: relative; overflow: hidden;
   animation: cardFloat 6s ease-in-out infinite;
   transition: box-shadow 0.4s;
 }
-/* subtle texture stripe at top */
+
+/* Garis shimmer di atas card */
 .hero-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 4px;
@@ -267,17 +309,17 @@ nav.scrolled {
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
-@keyframes shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-/* soft glow blob inside card */
+/* Blur blob di dalam card */
 .hero-card::after {
   content: '';
   position: absolute; bottom: -60px; right: -60px;
   width: 200px; height: 200px; border-radius: 50%;
   background: radial-gradient(circle, var(--accent-pale) 0%, transparent 70%);
   pointer-events: none;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 @keyframes cardFloat {
   0%, 100% { transform: translateY(0); }
@@ -288,13 +330,12 @@ nav.scrolled {
   box-shadow: 0 40px 100px rgba(181,133,90,0.18), 0 4px 16px rgba(181,133,90,0.08);
 }
 
-/* avatar photo */
+/* Foto profil bulat di card */
 .avatar-placeholder {
-  width: 140px; height: 140px; border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  margin: 0 auto 1.5rem;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  display: block; margin: 0 auto 1.5rem;
   border: 4px solid #fff;
   outline: 3px solid var(--accent-light);
   outline-offset: 3px;
@@ -306,25 +347,30 @@ nav.scrolled {
   box-shadow: 0 16px 48px rgba(181,133,90,0.28);
 }
 
-/* name & role */
+/* Nama & role di dalam card */
 .hero-card h3 {
   font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
-  text-align: center; margin-bottom: 0.3rem; letter-spacing: 0.01em;
-  color: var(--ink);
+  text-align: center; margin-bottom: 0.3rem;
+  letter-spacing: 0.01em; color: var(--ink);
 }
 .hero-card > p {
   text-align: center; font-size: 0.78rem;
   color: var(--accent); letter-spacing: 0.12em;
-  text-transform: uppercase; margin-bottom: 0;
-  font-weight: 500;
+  text-transform: uppercase; font-weight: 500;
 }
+
+/* Garis pemisah di card */
 .card-divider {
   height: 1px; background: var(--line);
-  margin: 1.75rem 0 1.5rem; position: relative; z-index: 1;
+  margin: 1.75rem 0 1.5rem;
+  position: relative; z-index: 1;
 }
+
+/* Statistik 3 kolom */
 .stat-row {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.75rem; position: relative; z-index: 1;
+  gap: 0.75rem;
+  position: relative; z-index: 1;
 }
 .stat {
   background: var(--accent-pale); border-radius: 1rem;
@@ -337,9 +383,12 @@ nav.scrolled {
   color: var(--accent); display: block;
 }
 .stat-label { font-size: 0.67rem; color: var(--muted); letter-spacing: 0.05em; }
+
+/* Tombol sosial media */
 .social-row {
   display: flex; justify-content: center; gap: 0.75rem;
-  margin-top: 1.25rem; position: relative; z-index: 1;
+  margin-top: 1.25rem;
+  position: relative; z-index: 1;
 }
 .social-btn {
   display: flex; align-items: center; justify-content: center;
@@ -350,16 +399,22 @@ nav.scrolled {
 }
 .social-btn:hover {
   border-color: var(--accent); color: var(--accent);
-  background: var(--accent-pale); transform: translateY(-5px) scale(1.15);
+  background: var(--accent-pale);
+  transform: translateY(-5px) scale(1.15);
   box-shadow: 0 6px 16px rgba(181,133,90,0.2);
 }
 
-/* ─── SECTION ─── */
+
+/* ============================================================
+   SECTION — LAYOUT UMUM
+   ============================================================ */
 section { padding: 6rem 5vw; }
+
 .section-header { margin-bottom: 3.5rem; }
+
 .section-tag {
-  display: block; font-size: 0.7rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
+  display: block;
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 0.75rem;
 }
 .section-title {
@@ -367,37 +422,51 @@ section { padding: 6rem 5vw; }
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 300; line-height: 1.2;
 }
+
+/* Garis aksen bawah judul section */
 .divider {
-  width: 48px; height: 2px; background: var(--accent);
+  width: 48px; height: 2px;
+  background: var(--accent);
   margin-top: 1rem; border-radius: 2px;
   transition: width 0.5s cubic-bezier(0.16,1,0.3,1);
 }
 .section-header:hover .divider { width: 100px; }
 
-/* ─── SCROLL REVEAL ─── */
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
 .reveal {
   opacity: 0; transform: translateY(36px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
 .reveal-left {
   opacity: 0; transform: translateX(-48px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
 .reveal-right {
   opacity: 0; transform: translateX(48px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Delay animasi */
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
 .delay-500 { transition-delay: 0.5s; }
 
-/* ─── ABOUT ─── */
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
 #about { background: var(--warm-white); }
+
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: start;
@@ -406,31 +475,21 @@ section { padding: 6rem 5vw; }
   color: var(--muted); font-size: 0.95rem;
   line-height: 1.9; margin-bottom: 1.25rem;
 }
-.skills-section { margin-top: 2rem; }
+
+/* Timeline pengalaman kerja */
 .skills-title {
   font-family: var(--serif); font-size: 1.1rem;
-  margin-bottom: 1rem; color: var(--ink);
-}
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-tag {
-  font-size: 0.75rem; padding: 0.4rem 1rem;
-  background: var(--accent-pale); color: var(--accent);
-  border-radius: 2rem; border: 1px solid var(--accent-light);
-  letter-spacing: 0.03em;
-  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1); cursor: default;
-}
-.skill-tag:hover {
-  background: var(--accent); color: #fff;
-  border-color: var(--accent);
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 6px 16px rgba(181,133,90,0.25);
+  color: var(--ink);
 }
 .timeline { position: relative; }
 .timeline-item {
-  padding-left: 1.75rem; position: relative; margin-bottom: 2rem;
+  padding-left: 1.75rem;
+  position: relative; margin-bottom: 2rem;
   transition: transform 0.3s ease;
 }
 .timeline-item:hover { transform: translateX(4px); }
+
+/* Titik bullet timeline */
 .timeline-item::before {
   content: '';
   position: absolute; left: 0; top: 0.45rem;
@@ -442,6 +501,8 @@ section { padding: 6rem 5vw; }
   transform: scale(1.7);
   box-shadow: 0 0 0 5px var(--accent-pale);
 }
+
+/* Garis vertikal timeline */
 .timeline-item::after {
   content: '';
   position: absolute; left: 3.5px; top: 1rem;
@@ -449,55 +510,69 @@ section { padding: 6rem 5vw; }
   background: var(--line);
 }
 .timeline-item:last-child::after { display: none; }
-.tl-period {
-  font-size: 0.72rem; color: var(--accent);
-  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem;
-}
-.tl-company { font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.2rem; }
-.tl-role { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
-.tl-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
 
-/* ─── PROJECTS ─── */
+.tl-period  { font-size: 0.72rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem; }
+.tl-company { font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.2rem; }
+.tl-role    { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+.tl-desc    { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
 #projects { background: var(--cream); }
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.75rem;
 }
+
+/* Card proyek */
 .project-card {
-  background: var(--warm-white); border: 1px solid var(--line);
+  background: var(--warm-white);
+  border: 1px solid var(--line);
   border-radius: 1.5rem; overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
   position: relative;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
 }
+
+/* Overlay tipis saat hover — pointer-events: none agar tidak menghalangi klik */
 .project-card::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(135deg, transparent 60%, rgba(181,133,90,0.04));
   opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
 }
 .project-card:hover {
   transform: translateY(-10px) scale(1.01);
   box-shadow: 0 28px 64px rgba(181,133,90,0.15);
 }
 .project-card:hover::after { opacity: 1; }
+
+/* Area gambar / thumbnail di atas card */
 .project-img {
   height: 160px;
   background: linear-gradient(135deg, var(--accent-pale), var(--accent-light));
   display: flex; align-items: center; justify-content: center;
   font-size: 2.5rem; overflow: hidden;
-  transition: transform 0.5s ease;
 }
-.project-img .emoji {
-  display: inline-block;
-  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+
+/* Gambar screenshot project */
+.project-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  display: block;
 }
-.project-card:hover .project-img { transform: scale(1.05); }
-.project-card:hover .project-img .emoji { transform: scale(1.3) rotate(-8deg); }
+
+/* Konten teks di bawah gambar */
 .project-body { padding: 1.5rem; }
+
 .project-type {
-  font-size: 0.68rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+  font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.5rem;
 }
 .project-title {
   font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
@@ -505,14 +580,21 @@ section { padding: 6rem 5vw; }
   transition: color 0.2s;
 }
 .project-card:hover .project-title { color: var(--accent); }
+
 .project-desc {
   font-size: 0.82rem; color: var(--muted);
-  line-height: 1.7; margin-bottom: 1.25rem;
+  line-height: 1.7; margin-bottom: 1rem;
 }
-.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* Tag teknologi */
+.project-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-bottom: 0; /* tidak ada margin bawah, jarak diatur dari project-link */
+}
 .project-tag {
   font-size: 0.68rem; padding: 0.25rem 0.75rem;
-  background: var(--accent-pale); color: var(--muted); border-radius: 2rem;
+  background: var(--accent-pale); color: var(--muted);
+  border-radius: 2rem;
   transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 .project-card:hover .project-tag {
@@ -520,72 +602,230 @@ section { padding: 6rem 5vw; }
   transform: translateY(-1px);
 }
 
-/* ─── CERTIFICATIONS ─── */
+/* Tombol "Lihat Proyek" — z-index tinggi agar bisa diklik di atas overlay */
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-light);
+  padding-bottom: 2px;
+  position: relative; z-index: 10;
+  cursor: pointer;
+  transition: border-color 0.2s, letter-spacing 0.2s;
+}
+.project-link:hover {
+  border-color: var(--accent);
+  letter-spacing: 0.14em;
+}
+
+
+/* ============================================================
+   CERTIFICATIONS SECTION
+   ============================================================ */
 #certifications { background: var(--accent-pale); }
+
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
+
+/* Card dasar */
 .cert-card {
-  background: #fff; border: 1px solid var(--line);
-  border-radius: 1.25rem; padding: 1.5rem;
-  display: flex; gap: 1rem; align-items: flex-start;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
-  position: relative; overflow: hidden;
-}
-.cert-card::before {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s ease;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+  cursor: pointer;
 }
 .cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(181,133,90,0.15);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 56px rgba(181,133,90,0.18);
 }
-.cert-card:hover::before { transform: scaleX(1); }
-.cert-icon {
-  width: 44px; height: 44px; flex-shrink: 0;
-  background: var(--accent-pale); border-radius: 0.75rem;
+
+/* Area preview gambar sertifikat */
+.cert-img {
+  width: 100%; height: 140px;
+  background: linear-gradient(135deg, var(--accent-pale), var(--accent-light));
+  overflow: hidden; position: relative;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
-  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
+  font-size: 2.5rem;
 }
-.cert-card:hover .cert-icon {
-  transform: rotate(-12deg) scale(1.12);
-  background: var(--accent-light);
+.cert-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  display: block;
+  /* sembunyikan ikon broken image bawaan browser */
+  color: transparent;
+}
+
+/* Overlay "Lihat Detail" muncul saat hover */
+.cert-img::after {
+  content: 'Lihat Detail →';
+  position: absolute; inset: 0;
+  background: rgba(28,26,23,0.55);
+  color: #fff;
+  font-family: var(--sans); font-size: 0.72rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cert-card:hover .cert-img::after { opacity: 1; }
+
+/* Body teks di bawah gambar */
+.cert-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex; flex-direction: column; flex: 1;
+}
+
+.cert-year {
+  font-size: 0.68rem; color: var(--accent);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 .cert-title {
-  font-family: var(--serif); font-size: 0.95rem;
-  line-height: 1.3; margin-bottom: 0.25rem;
+  font-family: var(--serif); font-size: 0.98rem;
+  line-height: 1.35; margin-bottom: 0.5rem;
+  color: var(--ink); transition: color 0.2s;
 }
-.cert-issuer { font-size: 0.75rem; color: var(--muted); }
-.cert-year { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.08em; margin-top: 0.25rem; }
+.cert-card:hover .cert-title { color: var(--accent); }
 
-/* ─── CONTACT ─── */
-#contact { background: var(--ink); color: #fff; }
-#contact .section-tag { color: var(--accent-light); }
-#contact .section-title { color: #fff; }
-#contact .divider { background: var(--accent-light); }
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: start;
+.cert-issuer {
+  font-size: 0.72rem; color: var(--muted);
+  margin-top: auto; padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
 }
+
+
+/* ============================================================
+   MODAL / POPUP SERTIFIKAT
+   ============================================================ */
+
+/* Overlay gelap di belakang modal */
+.cert-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(28,26,23,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 5000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.cert-modal-overlay.active {
+  opacity: 1; visibility: visible;
+}
+
+/* Kotak modal */
+.cert-modal {
+  background: var(--warm-white);
+  border-radius: 2rem;
+  max-width: 860px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+  position: relative;
+  transform: translateY(40px) scale(0.96);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.cert-modal-overlay.active .cert-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Kolom kiri: gambar sertifikat */
+.cert-modal-img {
+  border-radius: 2rem 0 0 2rem;
+  overflow: hidden; min-height: 380px;
+  background: linear-gradient(135deg, var(--accent-pale), var(--accent-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+}
+.cert-modal-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Kolom kanan: keterangan */
+.cert-modal-info {
+  padding: 2.5rem 2rem 2rem;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+
+/* Tombol tutup × */
+.cert-modal-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--cream); border: 1px solid var(--line);
+  color: var(--muted); font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 10;
+  transition: background 0.2s, color 0.2s, transform 0.3s;
+}
+.cert-modal-close:hover {
+  background: var(--ink); color: #fff;
+  transform: rotate(90deg);
+}
+
+.cert-modal-year {
+  font-size: 0.68rem; color: var(--accent);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+.cert-modal-title {
+  font-family: var(--serif); font-size: 1.5rem;
+  font-weight: 400; line-height: 1.2; color: var(--ink);
+}
+.cert-modal-issuer {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: var(--muted);
+  padding: 0.35rem 0.9rem;
+  background: var(--accent-pale); border-radius: 2rem;
+  border: 1px solid var(--accent-light);
+  width: fit-content;
+}
+.cert-modal-desc {
+  font-size: 0.88rem; color: var(--muted);
+  line-height: 1.8;
+}
+.cert-modal-divider {
+  height: 1px; background: var(--line);
+}
+
+
+
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+#contact { background: var(--ink); color: #fff; }
+#contact .section-tag   { color: var(--accent-light); }
+#contact .section-title { color: #fff; }
+#contact .divider       { background: var(--accent-light); }
+
+/* Layout 1 kolom penuh (form dihapus) */
+.contact-single {
+  max-width: 680px;
+}
+
 .contact-intro {
   font-size: 0.95rem; color: rgba(255,255,255,0.6);
   line-height: 1.8; margin-bottom: 2rem;
 }
+
 .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
+
 .contact-link {
   display: flex; align-items: center; gap: 0.75rem;
   text-decoration: none; color: rgba(255,255,255,0.75);
-  font-size: 0.88rem;
+  font-size: 0.88rem; padding: 0.5rem 0;
   transition: color 0.2s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  padding: 0.5rem 0;
 }
 .contact-link:hover { color: var(--accent-light); transform: translateX(8px); }
+
 .contact-link-icon {
   width: 38px; height: 38px;
   background: rgba(255,255,255,0.07); border-radius: 0.6rem;
@@ -595,50 +835,13 @@ section { padding: 6rem 5vw; }
 .contact-link:hover .contact-link-icon {
   background: rgba(181,133,90,0.3); transform: rotate(6deg);
 }
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-label {
-  font-size: 0.72rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(255,255,255,0.4);
-  transition: color 0.2s;
-}
-.form-group:focus-within .form-label { color: var(--accent-light); }
-.form-input, .form-textarea {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 0.75rem; padding: 0.85rem 1.1rem;
-  color: #fff; font-family: var(--sans); font-size: 0.9rem;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
-}
-.form-input:focus, .form-textarea:focus {
-  border-color: var(--accent);
-  background: rgba(255,255,255,0.1);
-  transform: translateY(-2px);
-}
-.form-textarea { resize: vertical; min-height: 120px; }
-.btn-send {
-  background: var(--accent); color: #fff; border: none;
-  padding: 0.9rem 2rem; border-radius: 2rem;
-  font-family: var(--sans); font-size: 0.8rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  cursor: none; align-self: flex-start; position: relative; overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-}
-.btn-send::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: rgba(255,255,255,0.18);
-  transform: translateX(-100%); transition: transform 0.3s ease;
-}
-.btn-send:hover::before { transform: translateX(0); }
-.btn-send:hover {
-  background: #9e6e45;
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 10px 28px rgba(181,133,90,0.4);
-}
 
-/* ─── FOOTER ─── */
+
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   background: #141210; color: rgba(255,255,255,0.3);
   text-align: center; padding: 1.75rem 5vw;
@@ -646,18 +849,31 @@ footer {
 }
 footer span { color: var(--accent); }
 
-/* ─── GLOBAL ANIMATIONS ─── */
+
+/* ============================================================
+   GLOBAL KEYFRAMES
+   ============================================================ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── RESPONSIVE ─── */
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ============================================================ */
 @media (max-width: 768px) {
+  /* Hero jadi 1 kolom, card profil di atas */
   #hero { grid-template-columns: 1fr; padding-top: 6rem; gap: 2.5rem; }
   .hero-visual { order: -1; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* About jadi 1 kolom */
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Sembunyikan nav links di mobile */
   .nav-links { display: none; }
+
+  /* Matikan custom cursor di mobile (tidak relevan di touch) */
   body { cursor: auto; }
   .cursor, .cursor-follower { display: none; }
 }

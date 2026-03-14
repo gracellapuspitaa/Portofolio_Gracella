@@ -4,16 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gracella Puspita Naomi Sitorus — Portfolio</title>
+
+  <!-- Google Fonts: Cormorant Garamond (serif) + DM Sans (sans) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- CURSOR -->
+<!-- ============================================================
+     CUSTOM CURSOR (dot + ring mengikuti mouse)
+     ============================================================ -->
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
 
-<!-- LOADER -->
+
+<!-- ============================================================
+     PAGE LOADER (muncul sebelum halaman tampil)
+     ============================================================ -->
 <div id="loader">
   <div class="loader-name">
     <span>G</span><span>r</span><span>a</span><span>c</span><span>e</span><span>l</span><span>l</span><span>a</span>
@@ -25,7 +33,10 @@
   </div>
 </div>
 
-<!-- NAV -->
+
+<!-- ============================================================
+     NAVIGATION (fixed di atas, transparan → frosted saat scroll)
+     ============================================================ -->
 <nav>
   <a class="nav-logo" href="#hero">Portofolio Gracella Sitorus</a>
   <ul class="nav-links">
@@ -36,29 +47,42 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
 <section id="hero">
+
+  <!-- Teks perkenalan (kiri) -->
   <div class="hero-text">
-    <span class="hero-tag">Ilmu Informasi &amp; Perpustakaan · Universitas Airlangga</span>
+    <span class="hero-tag">Ilmu Informasi dan Perpustakaan · Universitas Airlangga</span>
     <h1 class="hero-name">
       <span class="line"><span class="line-inner">Gracella Puspita</span></span>
       <span class="line"><span class="line-inner"><em>Naomi Sitorus</em></span></span>
     </h1>
     <p class="hero-desc">
-      Mahasiswa semester 6 dengan spesialisasi pengelolaan informasi dan pengarsipan digital.
-      Antusias dalam mentransformasi layanan informasi konvensional ke ranah digital guna meningkatkan aksesibilitas pengguna.
+      Information &amp; Library Science student exploring digital archives,
+      information systems, and web development.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">Lihat Proyek →</a>
-      <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+      <a href="#contact"  class="btn btn-outline">Hubungi Saya</a>
     </div>
   </div>
+
+  <!-- Card profil (kanan) -->
   <div class="hero-visual">
     <div class="hero-card">
+
+      <!-- Foto profil -->
       <img class="avatar-placeholder" src="profile-pict.png" alt="Gracella Puspita" />
+
       <h3>Gracella Sitorus</h3>
       <p>Information &amp; Library Science</p>
+
       <div class="card-divider"></div>
+
+      <!-- Statistik: pengalaman, proyek, sertifikat -->
       <div class="stat-row">
         <div class="stat">
           <span class="stat-num" data-target="3" data-suffix="+">0</span>
@@ -73,273 +97,501 @@
           <span class="stat-label">Sertifikat</span>
         </div>
       </div>
+
+      <!-- Tombol sosial media -->
       <div class="social-row">
-        <a class="social-btn" href="https://www.linkedin.com/in/gracellapns/" target="_blank" title="LinkedIn">in</a>
-        <a class="social-btn" href="https://github.com/gracellapuspitaa" target="_blank" title="GitHub">gh</a>
-        <a class="social-btn" href="https://www.youtube.com/@grace0821" target="_blank" title="YouTube">▶</a>
-        <a class="social-btn" href="https://www.tiktok.com/@cecegeece" target="_blank" title="TikTok">tt</a>
+        <a class="social-btn" href="https://www.linkedin.com/in/gracellapns/"   target="_blank" title="LinkedIn">in</a>
+        <a class="social-btn" href="https://github.com/gracellapuspitaa"        target="_blank" title="GitHub">gh</a>
+        <a class="social-btn" href="https://www.youtube.com/@grace0821"         target="_blank" title="YouTube">▶</a>
+        <a class="social-btn" href="https://www.tiktok.com/@cecegeece"          target="_blank" title="TikTok">tt</a>
       </div>
+
     </div>
   </div>
+
 </section>
 
-<!-- ABOUT -->
+
+<!-- ============================================================
+     ABOUT SECTION (01)
+     ============================================================ -->
 <section id="about">
+
   <div class="section-header reveal">
     <span class="section-tag">01 — Tentang Saya</span>
     <h2 class="section-title">Informasi, Arsip,<br>&amp; Teknologi Digital</h2>
     <div class="divider"></div>
   </div>
+
   <div class="about-grid">
+
+    <!-- Kolom kiri: paragraf bio -->
     <div class="reveal-left">
       <div class="about-text">
         <p>
-          Saya adalah mahasiswa Ilmu Informasi dan Perpustakaan Universitas Airlangga semester 6,
-          dengan fokus pada pengelolaan informasi dan pengarsipan digital. Saya percaya bahwa
-          informasi yang terkelola dengan baik adalah fondasi dari ekosistem pengetahuan yang efisien.
+          Mahasiswa semester 6 Program Studi Ilmu Informasi dan Perpustakaan di Universitas Airlangga
+          yang memiliki ketertarikan pada pengelolaan informasi, pengarsipan digital, serta pengembangan
+          teknologi informasi. Saya memiliki minat besar dalam mentransformasi layanan informasi
+          konvensional ke dalam bentuk digital guna meningkatkan aksesibilitas dan efisiensi bagi pengguna.
         </p>
         <p>
-          Dengan pengalaman magang di Perpustakaan Universitas Surabaya dan berbagai proyek web pribadi,
-          saya mengintegrasikan kemahiran pengatalogan dengan solusi teknologi modern.
+          Selama perkuliahan, saya terlibat dalam berbagai proyek akademik yang berkaitan dengan
+          penelusuran informasi strategis, pengelolaan dokumen, serta pengorganisasian informasi.
+          Selain itu, saya juga memiliki pengalaman magang wajib di perpustakaan Universitas Surabaya,
+          di mana saya terlibat dalam kegiatan pengelolaan koleksi, pengorganisasian informasi, serta
+          mendukung layanan perpustakaan bagi pemustaka.
+        </p>
+        <p>
+          Di luar kegiatan akademik, saya juga aktif mempelajari pengembangan website secara mandiri.
+          Meskipun bidang tersebut bukan fokus utama program studi saya, saya memiliki ketertarikan
+          tinggi terhadap dunia pemrograman dan sedang mengembangkan keterampilan dalam pembuatan website
+          sebagai bentuk eksplorasi teknologi yang dapat mendukung pengelolaan dan penyebaran informasi
+          secara lebih modern.
+        </p>
+        <p>
+          Sebagai pembelajar yang adaptif dan cepat memahami hal baru, saya berupaya mengintegrasikan
+          kemampuan di bidang pengelolaan informasi dengan teknologi digital. Saya percaya bahwa kombinasi
+          antara ilmu perpustakaan dan keterampilan teknologi dapat menciptakan sistem informasi yang
+          lebih inovatif, efektif, dan relevan dengan kebutuhan pengguna di era digital.
         </p>
       </div>
-      <div class="skills-section">
-        <div class="skills-title">Kemampuan Utama</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Pengelolaan Koleksi Perpustakaan</span>
-          <span class="skill-tag">Pengarsipan Digital</span>
-          <span class="skill-tag">HTML · CSS · JavaScript</span>
-          <span class="skill-tag">Information Architecture</span>
-          <span class="skill-tag">WordPress</span>
-          <span class="skill-tag">Figma · UI/UX</span>
-          <span class="skill-tag">Google Workspace</span>
-          <span class="skill-tag">Microsoft Office</span>
-          <span class="skill-tag">Manajemen Dokumen Digital</span>
-          <span class="skill-tag">Klasifikasi DDC</span>
-        </div>
-      </div>
     </div>
+
+    <!-- Kolom kanan: timeline pengalaman kerja -->
     <div class="reveal-right">
       <div class="skills-title" style="margin-bottom:1.5rem;">Pengalaman Kerja</div>
       <div class="timeline">
+
         <div class="timeline-item">
           <div class="tl-period">Jan – Feb 2026</div>
           <div class="tl-company">Perpustakaan Universitas Surabaya</div>
           <div class="tl-role">Mahasiswa Magang</div>
           <div class="tl-desc">Layanan sirkulasi, weeding koleksi, penginputan data e-book, dan pengelolaan Sistem Informasi Perpustakaan.</div>
         </div>
+
         <div class="timeline-item">
           <div class="tl-period">Mei – Sep 2024</div>
           <div class="tl-company">Rumah Kopi Baik</div>
           <div class="tl-role">Barista, Kitchen, dan Kasir</div>
           <div class="tl-desc">Melayani pelanggan, pencatatan transaksi, dan pengelolaan data penjualan harian.</div>
         </div>
+
         <div class="timeline-item">
           <div class="tl-period">Apr 2023</div>
           <div class="tl-company">Es Teh Indonesia</div>
           <div class="tl-role">Barista dan Kasir</div>
           <div class="tl-desc">Melayani pelanggan sesuai SOP dan pencatatan transaksi penjualan.</div>
         </div>
+
         <div class="timeline-item">
           <div class="tl-period">2023 – Sekarang</div>
           <div class="tl-company">Universitas Airlangga</div>
           <div class="tl-role">S1 Ilmu Informasi dan Perpustakaan</div>
           <div class="tl-desc">Fokus pada pengelolaan informasi, penelusuran informasi strategis, dan manajemen dokumen digital.</div>
         </div>
+
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- PROJECTS -->
+
+<!-- ============================================================
+     PROJECTS SECTION (02)
+
+     CARA EDIT TIAP CARD:
+     ① Ganti src="GANTI_GAMBAR_XXX.png" → nama file screenshot proyekmu
+        (taruh file gambarnya di folder yang sama dengan index.html)
+     ② Ganti href="GANTI_LINK_XXX"      → link live / GitHub / Google Drive
+     ③ Edit project-type, project-title, project-desc sesuai proyekmu
+     ④ Edit isi project-tag sesuai teknologi yang dipakai
+     ============================================================ -->
 <section id="projects">
+
   <div class="section-header reveal">
     <span class="section-tag">02 — Proyek</span>
     <h2 class="section-title">Karya &amp; Proyek<br>Pilihan</h2>
     <div class="divider"></div>
   </div>
+
   <div class="projects-grid">
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 1 — Sudut Cerita
+         ① src  : Sudut_cerita.png ✅ sudah ada
+         ② href : https://sudut-cerita.vercel.app/ ✅ sudah ada
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-100">
-      <div class="project-img"><span class="emoji">📚</span></div>
+      <div class="project-img">
+        <img src="Sudut_cerita.png" alt="Screenshot Sudut Cerita" />
+      </div>
       <div class="project-body">
-        <div class="project-type">Proyek Pribadi · 2026</div>
+        <div class="project-type">Proyek Pribadi · Website</div>
         <div class="project-title">Sudut Cerita</div>
-        <p class="project-desc">Platform repositori digital berbasis Vanilla JavaScript, HTML5, dan CSS3 yang mengintegrasikan prinsip dokumentasi arsip dengan teknologi antarmuka modern. Menerapkan konsep Information Architecture dan fitur pencarian real-time.</p>
+        <p class="project-desc">
+          Platform publikasi cerita digital berbasis HTML5, CSS3, dan Vanilla JavaScript yang dirancang
+          untuk menyajikan karya naratif secara responsif. Menekankan struktur konten yang sederhana
+          dan pengalaman membaca yang nyaman, serta dideploy menggunakan Vercel.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span>
-          <span class="project-tag">Vanilla JS</span><span class="project-tag">Information Architecture</span>
+          <span class="project-tag">HTML5</span>
+          <span class="project-tag">CSS3</span>
+          <span class="project-tag">Vanilla JS</span>
+          <span class="project-tag">Information Architecture</span>
         </div>
+        <a href="https://sudut-cerita.vercel.app/" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 2 — FindIt
+         ① src  : findit.png ✅ sudah ada
+         ② href : GANTI dengan link proyekmu
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-200">
-      <div class="project-img"><span class="emoji">🔍</span></div>
+      <div class="project-img">
+        <img src="findit.png" alt="Screenshot FindIt"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji\'>🔍</span>'" />
+      </div>
       <div class="project-body">
         <div class="project-type">Proyek Pribadi · Web App</div>
         <div class="project-title">FindIt — Campus Item Search</div>
-        <p class="project-desc">Sistem pencarian barang di lingkungan kampus berbasis Node.js, dilengkapi fitur login, dashboard interaktif, dan pencarian real-time. Prototipe manajemen inventaris kampus.</p>
+        <p class="project-desc">
+          Sistem pencarian barang di lingkungan kampus berbasis Node.js, dilengkapi fitur login,
+          dashboard interaktif, pencarian real-time, dan dashboard admin untuk memonitoring penemuan
+          dan laporan barang hilang. Dideploy menggunakan Vercel.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">Node.js</span><span class="project-tag">Front-end</span>
-          <span class="project-tag">Back-end</span><span class="project-tag">Dashboard</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Express.js</span>
+          <span class="project-tag">Supabase</span>
+          <span class="project-tag">HTML5</span>
+          <span class="project-tag">CSS3</span>
         </div>
+        <!-- ② GANTI href di bawah ini -->
+        <a href="GANTI_LINK_FINDIT" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 3 — Jelajah Sumut
+         ① src  : Jelajah_sumut.png ✅ sudah ada
+         ② href : Google Drive ✅ sudah ada
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-300">
-      <div class="project-img"><span class="emoji">🗺️</span></div>
+      <div class="project-img">
+        <img src="Jelajah_sumut.png" alt="Screenshot Jelajah Sumut"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji\'>🗺️</span>'" />
+      </div>
       <div class="project-body">
         <div class="project-type">Proyek Akademik · WordPress</div>
         <div class="project-title">Jelajah Sumut</div>
-        <p class="project-desc">Portal informasi wisata berbasis WordPress yang berfokus pada penyusunan struktur navigasi, arsitektur informasi, dan pengelolaan konten digital tentang destinasi Sumatera Utara.</p>
+        <p class="project-desc">
+          Portal informasi pariwisata yang menyajikan destinasi wisata, kuliner, dan budaya Sumatera Utara
+          dalam struktur navigasi yang terorganisir. Dikembangkan menggunakan WordPress CMS dengan tema
+          Astra dan Elementor, dilengkapi fitur live chat dan channel kontak interaktif.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">WordPress</span><span class="project-tag">Information Architecture</span>
-          <span class="project-tag">Content Management</span>
+          <span class="project-tag">WordPress</span>
+          <span class="project-tag">Astra Themes</span>
+          <span class="project-tag">Elementor</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">LocalWP</span>
         </div>
+        <a href="https://drive.google.com/file/d/1zK_gkNiWwHvj2F4U-aJ0XSDnYJMAdGWx/view?usp=drive_link" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 4 — Pengolahan Koleksi Bahan Pustaka
+         ① src  : "pengolahan koleksi.png" ✅ sudah ada
+         ② href : GANTI dengan link proyekmu (Google Drive / PDF)
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-100">
-      <div class="project-img"><span class="emoji">🏛️</span></div>
+      <div class="project-img">
+        <img src="pengolahan koleksi.png" alt="Screenshot Pengolahan Koleksi"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji\'>🏛️</span>'" />
+      </div>
       <div class="project-body">
         <div class="project-type">Proyek Akademik · Pengolahan Arsip</div>
         <div class="project-title">Pengolahan Koleksi Bahan Pustaka</div>
-        <p class="project-desc">Pengolahan koleksi perpustakaan meliputi pembuatan label buku, penentuan kode klasifikasi DDC, pembuatan lidah buku, serta penyusunan kartu peminjaman dan kartu lidah.</p>
+        <p class="project-desc">
+          Pengolahan koleksi bahan pustaka meliputi pembuatan label buku, penentuan nomor klasifikasi
+          menggunakan DDC, pembuatan lidah buku, serta penyusunan kartu peminjaman dan kartu lidah.
+          Data bibliografi diperoleh melalui sistem otomasi perpustakaan SLiMS.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">Klasifikasi DDC</span><span class="project-tag">Katalogisasi</span>
+          <span class="project-tag">DDC</span>
+          <span class="project-tag">SLiMS</span>
           <span class="project-tag">Manajemen Koleksi</span>
         </div>
+        <!-- ② GANTI href di bawah ini -->
+        <a href="GANTI_LINK_KOLEKSI" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 5 — Laporan PKL BPJS Ketenagakerjaan
+         ① src  : tqm.png ✅ sudah ada
+         ② href : Google Drive ✅ sudah ada
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-200">
-      <div class="project-img"><span class="emoji">📋</span></div>
+      <div class="project-img">
+        <img src="tqm.png" alt="Screenshot Laporan PKL BPJS"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji\'>📋</span>'" />
+      </div>
       <div class="project-body">
         <div class="project-type">Proyek Akademik · Laporan PKL</div>
         <div class="project-title">Laporan PKL BPJS Ketenagakerjaan</div>
-        <p class="project-desc">Laporan PKL Mata Kuliah Total Quality Management, berfokus pada pengamatan proses kerja, alur administrasi, dan pengelolaan dokumen organisasi BPJS Ketenagakerjaan Surabaya.</p>
+        <p class="project-desc">
+          Laporan PKL Mata Kuliah Total Quality Management, berfokus pada pengamatan proses kerja,
+          alur administrasi, dan pengelolaan dokumen organisasi BPJS Ketenagakerjaan Surabaya.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">Total Quality Management</span><span class="project-tag">Analisis Dokumen</span>
+          <span class="project-tag">Total Quality Management</span>
+          <span class="project-tag">Analisis Dokumen</span>
           <span class="project-tag">Laporan Ilmiah</span>
         </div>
+        <a href="https://drive.google.com/file/d/1eqgmMPPYIpyd-ItNWIIYpHyvaVr6VArX/view?usp=drive_link" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
+    <!-- ══════════════════════════════════════════
+         PROYEK 6 — Perbandingan 6 Metodologi Penelitian
+         ① src  : metpen.png ✅ sudah ada
+         ② href : Google Drive ✅ sudah ada
+         ══════════════════════════════════════════ -->
     <div class="project-card reveal delay-300">
-      <div class="project-img"><span class="emoji">🔬</span></div>
+      <div class="project-img">
+        <img src="metpen.png" alt="Screenshot Perbandingan Metodologi"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji\'>🔬</span>'" />
+      </div>
       <div class="project-body">
         <div class="project-type">Proyek Akademik · Riset</div>
         <div class="project-title">Perbandingan 6 Metodologi Penelitian</div>
-        <p class="project-desc">Laporan akademik perbandingan metodologi penelitian Ilmu Informasi dan Perpustakaan melalui studi literatur jurnal ilmiah dan analisis metode secara sistematis.</p>
+        <p class="project-desc">
+          Laporan akademik perbandingan metodologi penelitian Ilmu Informasi dan Perpustakaan
+          melalui studi literatur jurnal ilmiah dan analisis metode secara sistematis.
+        </p>
         <div class="project-tags">
-          <span class="project-tag">Metodologi Penelitian</span><span class="project-tag">Studi Literatur</span>
+          <span class="project-tag">Metodologi Penelitian</span>
+          <span class="project-tag">Studi Literatur</span>
           <span class="project-tag">Analisis Komparatif</span>
         </div>
+        <a href="https://drive.google.com/file/d/1eDPftW1o-jKmtKDUdSxkDejJhaXQnHv0/view?usp=drive_link" target="_blank" class="project-link">
+          Lihat Proyek →
+        </a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+
+<!-- ============================================================
+     CERTIFICATIONS SECTION (03)
+
+     CARA EDIT TIAP CARD:
+     ① Ganti src="GANTI_GAMBAR_SERTIF_XXX.png" → foto sertifikatmu
+     ② Ganti data-img="GANTI_GAMBAR_SERTIF_XXX.png" → sama dengan src di atas
+     ③ Edit data-desc → deskripsi singkat untuk popup
+     ============================================================ -->
 <section id="certifications">
+
   <div class="section-header reveal">
     <span class="section-tag">03 — Sertifikat</span>
     <h2 class="section-title">Pelatihan &amp;<br>Sertifikasi</h2>
     <div class="divider"></div>
   </div>
+
   <div class="cert-grid">
-    <div class="cert-card reveal delay-100">
-      <div class="cert-icon">🏛️</div>
-      <div>
+
+    <!-- ── SERTIFIKAT 1 — Magang UBAYA ── -->
+    <div class="cert-card reveal delay-100"
+         data-title="Magang Wajib — Perpustakaan Universitas Surabaya"
+         data-issuer="UBAYA"
+         data-year="Jan – Feb 2026"
+         data-img="sertif-magang.jpg"
+         data-desc="Sertifikat penyelesaian magang wajib di Perpustakaan Universitas Surabaya. Kegiatan meliputi layanan sirkulasi, weeding koleksi, penginputan data e-book, dan pengelolaan Sistem Informasi Perpustakaan.">
+      <div class="cert-img">
+        <!-- Ganti src dengan foto sertifikatmu -->
+        <img src="sertif-magang.jpg" alt="Sertifikat Magang UBAYA" />
+      </div>
+      <div class="cert-body">
+        <div class="cert-year">Jan – Feb 2026</div>
         <div class="cert-title">Magang Wajib — Perpustakaan Universitas Surabaya</div>
         <div class="cert-issuer">UBAYA</div>
-        <div class="cert-year">Jan – Feb 2026</div>
       </div>
     </div>
-    <div class="cert-card reveal delay-200">
-      <div class="cert-icon">🎨</div>
-      <div>
+
+    <!-- ── SERTIFIKAT 2 — Figma Udemy ── -->
+    <div class="cert-card reveal delay-200"
+         data-title="Complete Figma Course: Web &amp; Mobile Projects from Scratch"
+         data-issuer="Udemy"
+         data-year="Feb 2026"
+         data-img="GANTI_GAMBAR_SERTIF_FIGMA.png"
+         data-desc="Sertifikat penyelesaian kursus Figma lengkap mencakup desain antarmuka web dan mobile dari nol, termasuk prototyping, komponen, dan auto layout.">
+      <div class="cert-img">
+        <!-- Ganti src dengan foto sertifikatmu -->
+        <img src="GANTI_GAMBAR_SERTIF_FIGMA.png" alt="Sertifikat Figma Udemy" />
+      </div>
+      <div class="cert-body">
+        <div class="cert-year">Feb 2026</div>
         <div class="cert-title">Complete Figma Course: Web &amp; Mobile Projects from Scratch</div>
         <div class="cert-issuer">Udemy</div>
-        <div class="cert-year">Feb 2026</div>
       </div>
     </div>
-    <div class="cert-card reveal delay-300">
-      <div class="cert-icon">📝</div>
-      <div>
+
+    <!-- ── SERTIFIKAT 3 — WordPress Coursera ── -->
+    <div class="cert-card reveal delay-300"
+         data-title="Build a Full Website Around a Blog Using WordPress"
+         data-issuer="Coursera"
+         data-year="Feb 2026"
+         data-img="GANTI_GAMBAR_SERTIF_WP.png"
+         data-desc="Sertifikat penyelesaian kursus membangun website lengkap berbasis WordPress, mencakup pengaturan tema, plugin, konten, dan publikasi online.">
+      <div class="cert-img">
+        <!-- Ganti src dengan foto sertifikatmu -->
+        <img src="GANTI_GAMBAR_SERTIF_WP.png" alt="Sertifikat WordPress Coursera" />
+      </div>
+      <div class="cert-body">
+        <div class="cert-year">Feb 2026</div>
         <div class="cert-title">Build a Full Website Around a Blog Using WordPress</div>
         <div class="cert-issuer">Coursera</div>
-        <div class="cert-year">Feb 2026</div>
       </div>
     </div>
-    <div class="cert-card reveal delay-400">
-      <div class="cert-icon">💻</div>
-      <div>
+
+    <!-- ── SERTIFIKAT 4 — IBM SkillsBuild ── -->
+    <div class="cert-card reveal delay-400"
+         data-title="Web Development Fundamentals"
+         data-issuer="IBM SkillsBuild"
+         data-year="Apr 2025"
+         data-img="GANTI_GAMBAR_SERTIF_IBM.png"
+         data-desc="Sertifikat dari IBM SkillsBuild mencakup dasar-dasar pengembangan web, termasuk HTML, CSS, JavaScript, dan konsep fundamental web development modern.">
+      <div class="cert-img">
+        <!-- Ganti src dengan foto sertifikatmu -->
+        <img src="GANTI_GAMBAR_SERTIF_IBM.png" alt="Sertifikat IBM SkillsBuild" />
+      </div>
+      <div class="cert-body">
+        <div class="cert-year">Apr 2025</div>
         <div class="cert-title">Web Development Fundamentals</div>
         <div class="cert-issuer">IBM SkillsBuild</div>
-        <div class="cert-year">Apr 2025</div>
       </div>
     </div>
-    <div class="cert-card reveal delay-500">
-      <div class="cert-icon">📚</div>
-      <div>
+
+    <!-- ── SERTIFIKAT 5 — EPIC Coursera ── -->
+    <div class="cert-card reveal delay-500"
+         data-title="Setting Up a Digital Library with EPIC"
+         data-issuer="Coursera"
+         data-year="Des 2025"
+         data-img="GANTI_GAMBAR_SERTIF_EPIC.png"
+         data-desc="Sertifikat penyelesaian kursus membangun dan mengelola perpustakaan digital menggunakan platform EPIC, mencakup pengorganisasian koleksi dan akses digital.">
+      <div class="cert-img">
+        <!-- Ganti src dengan foto sertifikatmu -->
+        <img src="GANTI_GAMBAR_SERTIF_EPIC.png" alt="Sertifikat EPIC Coursera" />
+      </div>
+      <div class="cert-body">
+        <div class="cert-year">Des 2025</div>
         <div class="cert-title">Setting Up a Digital Library with EPIC</div>
         <div class="cert-issuer">Coursera</div>
-        <div class="cert-year">Des 2025</div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
+
+<!-- ============================================================
+     MODAL POPUP SERTIFIKAT
+     Dikontrol via JavaScript di script.js
+     ============================================================ -->
+<div class="cert-modal-overlay" id="certModal">
+  <div class="cert-modal">
+
+    <!-- Tombol tutup -->
+    <button class="cert-modal-close" id="certModalClose">✕</button>
+
+    <!-- Kolom kiri: gambar sertifikat -->
+    <div class="cert-modal-img" id="certModalImg">
+      <!-- Diisi otomatis oleh JS -->
+    </div>
+
+    <!-- Kolom kanan: keterangan detail -->
+    <div class="cert-modal-info">
+      <div class="cert-modal-year"   id="certModalYear"></div>
+      <div class="cert-modal-title"  id="certModalTitle"></div>
+      <div class="cert-modal-issuer" id="certModalIssuer"></div>
+      <div class="cert-modal-divider"></div>
+      <p class="cert-modal-desc"     id="certModalDesc"></p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
+     CONTACT SECTION (04)
+     ============================================================ -->
 <section id="contact">
+
   <div class="section-header reveal">
     <span class="section-tag">04 — Kontak</span>
     <h2 class="section-title">Mari Terhubung</h2>
     <div class="divider"></div>
   </div>
-  <div class="contact-grid">
-    <div class="reveal-left">
-      <p class="contact-intro">
-        Tertarik untuk berkolaborasi, berdiskusi tentang pengelolaan informasi digital, atau sekadar menyapa?
-        Jangan ragu untuk menghubungi saya melalui email atau media sosial di bawah ini.
-      </p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:gracella.puspita.naomi-2023@fisip.unair.ac.id">
-          <span class="contact-link-icon">✉</span>
-          gracella.puspita.naomi-2023@fisip.unair.ac.id
-        </a>
-        <a class="contact-link" href="tel:+6282245751740">
-          <span class="contact-link-icon">📱</span>
-          +62 822-4575-1740
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/gracellapns/" target="_blank">
-          <span class="contact-link-icon">in</span>
-          linkedin.com/in/gracellapns
-        </a>
-        <a class="contact-link" href="https://github.com/gracellapuspitaa" target="_blank">
-          <span class="contact-link-icon">⌥</span>
-          github.com/gracellapuspitaa
-        </a>
-      </div>
+
+  <div class="contact-single reveal">
+
+    <p class="contact-intro">
+      Tertarik untuk berkolaborasi, berdiskusi tentang pengelolaan informasi digital, atau sekadar menyapa?
+      Jangan ragu untuk menghubungi saya melalui email atau media sosial di bawah ini.
+    </p>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:gracella.puspita.naomi-2023@fisip.unair.ac.id">
+        <span class="contact-link-icon">✉</span>
+        gracella.puspita.naomi-2023@fisip.unair.ac.id
+      </a>
+      <a class="contact-link" href="tel:+6282245751740">
+        <span class="contact-link-icon">📱</span>
+        +62 822-4575-1740
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/gracellapns/" target="_blank">
+        <span class="contact-link-icon">in</span>
+        linkedin.com/in/gracellapns
+      </a>
+      <a class="contact-link" href="https://github.com/gracellapuspitaa" target="_blank">
+        <span class="contact-link-icon">⌥</span>
+        github.com/gracellapuspitaa
+      </a>
     </div>
-    <div class="contact-form reveal-right">
-      <div class="form-group">
-        <label class="form-label">Nama</label>
-        <input class="form-input" type="text" placeholder="Nama kamu" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input class="form-input" type="email" placeholder="email@kamu.com" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Pesan</label>
-        <textarea class="form-textarea" placeholder="Tuliskan pesanmu di sini..."></textarea>
-      </div>
-      <button class="btn-send">Kirim Pesan →</button>
-    </div>
+
   </div>
+
 </section>
 
-<!-- FOOTER -->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer>
   <p>© 2026 <span>Gracella Puspita Naomi Sitorus</span> — Ilmu Informasi &amp; Perpustakaan, Universitas Airlangga</p>
 </footer>
 
+
+<!-- Script utama (cursor, loader, scroll reveal, counter, modal) -->
 <script src="script.js"></script>
+
 </body>
 </html>

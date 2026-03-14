@@ -1,7 +1,8 @@
 /* ─────────────────────────────────────────
    script.js — Portfolio Gracella
    Animasi: loader, cursor, scroll reveal,
-             nav scroll, counter, parallax
+             nav scroll, counter, parallax,
+             project card tilt, modal sertifikat
 ───────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,16 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor   = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
 
-  let mouseX = 0, mouseY = 0;
-
   document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top  = mouseY + 'px';
-    // follower mengikuti dengan sedikit lag via CSS transition
-    follower.style.left = mouseX + 'px';
-    follower.style.top  = mouseY + 'px';
+    cursor.style.left   = e.clientX + 'px';
+    cursor.style.top    = e.clientY + 'px';
+    follower.style.left = e.clientX + 'px';
+    follower.style.top  = e.clientY + 'px';
   });
 
   // Efek hover pada elemen interaktif
@@ -69,9 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
 
@@ -97,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
+        const el  = entry.target;
         const val = parseInt(el.dataset.target);
         animateCounter(el, val);
         counterObserver.unobserve(el);
@@ -110,25 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 6. PARALLAX ORBS ────────────────────
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
     const hero = document.querySelector('#hero');
-    if (!hero) return;
-    hero.style.setProperty('--scroll-y', scrollY * 0.15 + 'px');
+    if (hero) hero.style.setProperty('--scroll-y', window.scrollY * 0.15 + 'px');
   });
 
 
-  // ── 7. PROJECT CARD TILT ────────────────
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect   = card.getBoundingClientRect();
-      const x      = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y      = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transform = `translateY(-10px) scale(1.01) rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+
+
 
 
   // ── 8. SMOOTH SECTION HIGHLIGHT ─────────
@@ -141,9 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = entry.target.id;
         navLinks.forEach(a => {
           a.style.color = '';
-          if (a.getAttribute('href') === '#' + id) {
-            a.style.color = 'var(--accent)';
-          }
+          if (a.getAttribute('href') === '#' + id) a.style.color = 'var(--accent)';
         });
       }
     });
@@ -155,11 +135,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 9. FORM INPUT RIPPLE ────────────────
   document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
     input.addEventListener('focus', function() {
-      this.parentElement.querySelector('.form-label').style.letterSpacing = '0.15em';
+      const label = this.parentElement.querySelector('.form-label');
+      if (label) label.style.letterSpacing = '0.15em';
     });
     input.addEventListener('blur', function() {
-      this.parentElement.querySelector('.form-label').style.letterSpacing = '';
+      const label = this.parentElement.querySelector('.form-label');
+      if (label) label.style.letterSpacing = '';
     });
   });
+
+
+  // ── 10. MODAL SERTIFIKAT ────────────────
+  const overlay     = document.getElementById('certModal');
+  const modalClose  = document.getElementById('certModalClose');
+  const modalImg    = document.getElementById('certModalImg');
+  const modalYear   = document.getElementById('certModalYear');
+  const modalTitle  = document.getElementById('certModalTitle');
+  const modalIssuer = document.getElementById('certModalIssuer');
+  const modalDesc   = document.getElementById('certModalDesc');
+
+  // Buka modal saat card diklik
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const img    = card.dataset.img;
+      const title  = card.dataset.title;
+      const issuer = card.dataset.issuer;
+      const year   = card.dataset.year;
+      const desc   = card.dataset.desc;
+      const link   = card.dataset.link;
+
+      // Isi gambar modal — fallback emoji jika gambar belum ada
+      modalImg.innerHTML = `<img src="${img}" alt="${title}"
+        onerror="this.style.display='none'" />`;
+
+      // Isi teks modal
+      modalYear.textContent   = year;
+      modalTitle.textContent  = title;
+      modalIssuer.textContent = `🏛 ${issuer}`;
+      modalDesc.textContent   = desc;
+
+      // Tampilkan modal
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Tutup modal — tombol ✕
+  modalClose.addEventListener('click', closeCertModal);
+
+  // Tutup modal — klik area gelap di luar
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeCertModal();
+  });
+
+  // Tutup modal — tekan Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCertModal();
+  });
+
+  function closeCertModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
 });
