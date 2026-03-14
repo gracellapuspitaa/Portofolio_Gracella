@@ -2,7 +2,8 @@
    script.js — Portfolio Gracella
    Animasi: loader, cursor, scroll reveal,
              nav scroll, counter, parallax,
-             project card tilt, modal sertifikat
+             modal sertifikat, dark mode,
+             back to top
 ───────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,18 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
   const chars  = loader.querySelectorAll('.loader-name span');
 
-  // Stagger tiap huruf muncul
   chars.forEach((c, i) => {
     c.style.animationDelay = `${i * 0.05}s`;
   });
 
-  // Sembunyikan loader setelah 1.8 detik
   setTimeout(() => {
     loader.classList.add('hidden');
     document.body.style.overflow = '';
   }, 1800);
 
-  // Sembunyikan scroll saat loader aktif
   document.body.style.overflow = 'hidden';
 
 
@@ -37,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     follower.style.top  = e.clientY + 'px';
   });
 
-  // Efek hover pada elemen interaktif
   const hoverTargets = document.querySelectorAll(
-    'a, button, .btn, .btn-send, .skill-tag, .stat, .social-btn, .project-card, .cert-card'
+    'a, button, .btn, .skill-tag, .stat, .social-btn, .project-card, .cert-card'
   );
   hoverTargets.forEach(el => {
     el.addEventListener('mouseenter', () => {
@@ -109,11 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
-
-
-
-  // ── 8. SMOOTH SECTION HIGHLIGHT ─────────
+  // ── 7. SMOOTH SECTION HIGHLIGHT ─────────
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -132,20 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(s => sectionObserver.observe(s));
 
 
-  // ── 9. FORM INPUT RIPPLE ────────────────
-  document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
-    input.addEventListener('focus', function() {
-      const label = this.parentElement.querySelector('.form-label');
-      if (label) label.style.letterSpacing = '0.15em';
-    });
-    input.addEventListener('blur', function() {
-      const label = this.parentElement.querySelector('.form-label');
-      if (label) label.style.letterSpacing = '';
-    });
-  });
-
-
-  // ── 10. MODAL SERTIFIKAT ────────────────
+  // ── 8. MODAL SERTIFIKAT ────────────────
   const overlay     = document.getElementById('certModal');
   const modalClose  = document.getElementById('certModalClose');
   const modalImg    = document.getElementById('certModalImg');
@@ -154,7 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalIssuer = document.getElementById('certModalIssuer');
   const modalDesc   = document.getElementById('certModalDesc');
 
-  // Buka modal saat card diklik
+  function closeCertModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   document.querySelectorAll('.cert-card').forEach(card => {
     card.addEventListener('click', () => {
       const img    = card.dataset.img;
@@ -162,40 +146,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const issuer = card.dataset.issuer;
       const year   = card.dataset.year;
       const desc   = card.dataset.desc;
-      const link   = card.dataset.link;
 
-      // Isi gambar modal — fallback emoji jika gambar belum ada
-      modalImg.innerHTML = `<img src="${img}" alt="${title}"
-        onerror="this.style.display='none'" />`;
-
-      // Isi teks modal
+      modalImg.innerHTML = `<img src="${img}" alt="${title}" onerror="this.style.display='none'" />`;
       modalYear.textContent   = year;
       modalTitle.textContent  = title;
       modalIssuer.textContent = `🏛 ${issuer}`;
       modalDesc.textContent   = desc;
 
-      // Tampilkan modal
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  // Tutup modal — tombol ✕
   modalClose.addEventListener('click', closeCertModal);
 
-  // Tutup modal — klik area gelap di luar
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) closeCertModal();
   });
 
-  // Tutup modal — tekan Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeCertModal();
   });
 
-  function closeCertModal() {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
+
+  // ── 9. DARK MODE TOGGLE ────────────────
+  const darkToggle = document.getElementById('darkToggle');
+  const darkIcon   = darkToggle.querySelector('.dark-toggle-icon');
+
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    darkIcon.textContent = '☀️';
   }
+
+  darkToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    darkIcon.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark);
+  });
+
+
+  // ── 10. BACK TO TOP ─────────────────────
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
 });

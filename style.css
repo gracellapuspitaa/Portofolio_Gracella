@@ -840,6 +840,87 @@ section { padding: 6rem 5vw; }
 
 
 /* ============================================================
+   DARK MODE
+   ============================================================ */
+body.dark {
+  --cream:        #1a1814;
+  --warm-white:   #201e1a;
+  --ink:          #f0ebe3;
+  --muted:        #a89e92;
+  --accent:       #c9976a;
+  --accent-light: #5a3e28;
+  --accent-pale:  #2a221a;
+  --line:         #332e28;
+}
+
+/* Nav di dark mode */
+body.dark nav.scrolled {
+  background: rgba(26,24,20,0.92);
+}
+
+/* Cert card dark mode — override hardcoded #fff */
+body.dark .cert-card {
+  background: var(--warm-white);
+  border-color: var(--line);
+}
+body.dark .cert-title  { color: var(--ink); }
+body.dark .cert-issuer { color: var(--muted); border-color: var(--line); }
+
+/* Contact dark mode — section background tetap gelap tapi lebih kontras */
+body.dark #contact { background: #0e0d0b; }
+body.dark .contact-link { color: rgba(240,235,227,0.75); }
+body.dark .contact-link:hover { color: var(--accent); }
+body.dark .contact-link-icon { background: rgba(255,255,255,0.05); }
+body.dark .contact-intro { color: rgba(240,235,227,0.55); }
+
+/* Tombol dark mode toggle */
+.dark-toggle {
+  background: none; border: 1px solid var(--line);
+  border-radius: 2rem; padding: 0.3rem 0.6rem;
+  cursor: none; font-size: 0.85rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  display: flex; align-items: center;
+  color: var(--muted);
+}
+.dark-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent-pale);
+  transform: scale(1.1);
+}
+.dark-toggle-icon {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+body.dark .dark-toggle-icon { transform: rotate(180deg); }
+
+
+/* ============================================================
+   BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  border: none; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: none; z-index: 500;
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: opacity 0.3s, visibility 0.3s,
+              transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              background 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(181,133,90,0.3);
+}
+.back-to-top.visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.back-to-top:hover {
+  background: #9e6e45;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 24px rgba(181,133,90,0.45);
+}
+
+
+/* ============================================================
    FOOTER
    ============================================================ */
 footer {
@@ -869,6 +950,28 @@ footer span { color: var(--accent); }
 
   /* About jadi 1 kolom */
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Projects jadi 1 kolom */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Cert grid jadi 1 kolom */
+  .cert-grid { grid-template-columns: 1fr; }
+
+  /* Modal jadi 1 kolom (gambar atas, teks bawah) */
+  .cert-modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    max-height: 95vh;
+  }
+  .cert-modal-img {
+    border-radius: 2rem 2rem 0 0;
+    min-height: 220px;
+  }
+  .cert-modal-info { padding: 1.5rem; }
+  .cert-modal-title { font-size: 1.2rem; }
+
+  /* Contact single kolom sudah oke, hanya perkecil padding */
+  .contact-single { max-width: 100%; }
 
   /* Sembunyikan nav links di mobile */
   .nav-links { display: none; }
